@@ -34,6 +34,20 @@
     background: var(--ink);
     -webkit-font-smoothing: antialiased;
   }
+
+  .page-loading,
+  .page-load-error {
+    max-width: var(--max);
+    margin: 3rem auto;
+    padding-inline: var(--pad);
+    text-align: center;
+    color: var(--stone);
+  }
+
+  .page-load-error {
+    color: var(--accent);
+    font-weight: 600;
+  }
   
   a {
     color: inherit;
@@ -663,6 +677,1275 @@
   
   .legal-link:hover {
     color: var(--white);
+  }
+
+  /* ==========================================================================
+     AUTOMATION PAGE
+     ========================================================================== */
+  .automations_hero .container,
+  .automations_social_proof .container,
+  .automations_features .container,
+  .automations_how_it_works .container,
+  .automations_cta .container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .automations_hero {
+    position: relative;
+    background-color: var(--ink);
+    padding-block: clamp(4rem, 10vw, 7rem);
+    border-bottom: 1px solid var(--slate);
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .automations_hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .automations_hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 44rem;
+  }
+
+  .automations_hero h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 14px rgba(8, 9, 10, 0.9);
+  }
+
+  .automations_hero p {
+    margin: 0 0 2rem;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--stone);
+    text-shadow: 0 2px 6px rgba(8, 9, 10, 0.9);
+  }
+
+  .btn_primary,
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.75rem;
+    background: linear-gradient(135deg, var(--accent) 0%, #e04f00 100%);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 14px rgba(255, 90, 0, 0.3);
+    border-radius: 2px;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn_primary:hover,
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 90, 0, 0.45);
+    color: var(--white);
+  }
+
+  .automations_social_proof {
+    padding-block: clamp(2.5rem, 6vw, 3.5rem);
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .automations_social_proof .trust_text {
+    margin: 0 0 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--stone);
+  }
+
+  .automations_social_proof .trust_text strong {
+    color: var(--white);
+  }
+
+  .automations_social_proof .values_grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 48rem) {
+    .automations_social_proof .values_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .automations_social_proof .value_item {
+    padding: 1.75rem 2rem;
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    border-left: 3px solid var(--accent);
+    text-align: center;
+  }
+
+  .automations_social_proof .value_item strong {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+  }
+
+  .automations_social_proof .value_item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--stone);
+  }
+
+  .automations_features {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--coal);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .automations_features h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .automations_features .features_grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 48rem) {
+    .automations_features .features_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .automations_features .feature_item {
+    padding: 2rem;
+    background: var(--ink);
+    border: 1px solid var(--slate);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .automations_features .feature_item h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  .automations_features .feature_item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  .automations_how_it_works {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .automations_how_it_works h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .automations_how_it_works .process_steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    counter-reset: automation-step;
+  }
+
+  .automations_how_it_works .process_steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.75rem 2rem;
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    counter-increment: automation-step;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  .automations_how_it_works .process_steps li::before {
+    content: counter(automation-step);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--white);
+    background: var(--accent);
+  }
+
+  .automations_how_it_works .process_steps strong {
+    color: var(--white);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .automations_cta {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--coal);
+  }
+
+  .automations_cta .container {
+    padding-block: clamp(2.5rem, 6vw, 3.5rem);
+    text-align: center;
+    background: var(--ink);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .automations_cta .container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+
+  .automations_cta h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .automations_cta p {
+    margin: 0 auto 2rem;
+    max-width: 36rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  /* ==========================================================================
+     CONTACT PAGE
+     ========================================================================== */
+  .contact_hero .container,
+  .contact_form_section .container,
+  .contact_trust .container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .contact_hero {
+    position: relative;
+    background-color: var(--ink);
+    padding-block: clamp(4rem, 10vw, 6rem);
+    border-bottom: 1px solid var(--slate);
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .contact_hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .contact_hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 44rem;
+  }
+
+  .contact_hero h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 14px rgba(8, 9, 10, 0.9);
+  }
+
+  .contact_hero p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--stone);
+    text-shadow: 0 2px 6px rgba(8, 9, 10, 0.9);
+  }
+
+  .contact_form_section {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--coal);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .contact_form_section .container {
+    max-width: 36rem;
+  }
+
+  .contact_form_section h2 {
+    margin: 0 0 2rem;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .contact_lead_form {
+    padding: 2.5rem;
+    background: var(--ink);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .contact_lead_form::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+
+  .contact_lead_form .form_group {
+    margin-bottom: 1.25rem;
+  }
+
+  .contact_lead_form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  .contact_lead_form input,
+  .contact_lead_form select,
+  .contact_lead_form textarea {
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    transition: border-color 0.2s ease;
+  }
+
+  .contact_lead_form textarea {
+    resize: vertical;
+    min-height: 7rem;
+    line-height: 1.5;
+  }
+
+  .contact_lead_form input:focus,
+  .contact_lead_form select:focus,
+  .contact_lead_form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .contact_lead_form .btn_primary {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .contact_trust {
+    padding-block: clamp(3rem, 8vw, 5rem);
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .contact_trust h3 {
+    margin: 0 0 2rem;
+    text-align: center;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: var(--white);
+  }
+
+  .contact_trust .trust_steps_grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 48rem) {
+    .contact_trust .trust_steps_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .contact_trust .trust_step {
+    padding: 1.75rem 2rem;
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    border-left: 3px solid var(--accent);
+    text-align: center;
+  }
+
+  .contact_trust .trust_step strong {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+  }
+
+  .contact_trust .trust_step p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--stone);
+  }
+
+  /* ==========================================================================
+     FAQ PAGE
+     ========================================================================== */
+  .faq_hero .container,
+  .faq_accordion_section .container,
+  .faq_cta .container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .faq_hero {
+    position: relative;
+    background-color: var(--ink);
+    padding-block: clamp(4rem, 10vw, 6rem);
+    border-bottom: 1px solid var(--slate);
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .faq_hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .faq_hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 44rem;
+  }
+
+  .faq_hero h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 14px rgba(8, 9, 10, 0.9);
+  }
+
+  .faq_hero p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--stone);
+    text-shadow: 0 2px 6px rgba(8, 9, 10, 0.9);
+  }
+
+  .faq_accordion_section {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--coal);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .faq_accordion_section h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .faq_accordion_section .faq_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq_accordion_section .faq_item {
+    border: 1px solid var(--slate);
+    background: var(--ink);
+  }
+
+  .faq_accordion_section .faq_question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq_accordion_section .faq_question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq_accordion_section .faq_question::after {
+    content: "+";
+    flex-shrink: 0;
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--stone);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .faq_accordion_section .faq_item[open] .faq_question::after {
+    transform: rotate(45deg);
+    color: var(--accent);
+  }
+
+  .faq_accordion_section .faq_answer {
+    padding: 0 2rem 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--stone);
+  }
+
+  .faq_accordion_section .faq_answer p {
+    margin: 0;
+  }
+
+  .faq_cta {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .faq_cta .container {
+    padding-block: clamp(2.5rem, 6vw, 3.5rem);
+    text-align: center;
+    background: var(--coal);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .faq_cta .container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+
+  .faq_cta h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .faq_cta p {
+    margin: 0 auto 2rem;
+    max-width: 36rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  /* ==========================================================================
+     INSTALLATION PAGE
+     ========================================================================== */
+  .installation_hero .container,
+  .installation_options .container,
+  .installation_features .container,
+  .installation_cta .container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .installation_hero {
+    position: relative;
+    background-color: var(--ink);
+    padding-block: clamp(4rem, 10vw, 7rem);
+    border-bottom: 1px solid var(--slate);
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .installation_hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .installation_hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 44rem;
+  }
+
+  .installation_hero h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 14px rgba(8, 9, 10, 0.9);
+  }
+
+  .installation_hero p {
+    margin: 0 0 2rem;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--stone);
+    text-shadow: 0 2px 6px rgba(8, 9, 10, 0.9);
+  }
+
+  .installation_options {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--coal);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .installation_options h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .installation_options .options_grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 48rem) {
+    .installation_options .options_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .installation_options .option_item {
+    padding: 2rem;
+    background: var(--ink);
+    border: 1px solid var(--slate);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .installation_options .option_item h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  .installation_options .option_item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  .installation_features {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .installation_features h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .installation_features .benefits_grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 48rem) {
+    .installation_features .benefits_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .installation_features .benefit_item {
+    padding: 1.75rem 2rem;
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    border-left: 3px solid var(--accent);
+    text-align: center;
+  }
+
+  .installation_features .benefit_item strong {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+  }
+
+  .installation_features .benefit_item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--stone);
+  }
+
+  .installation_cta {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--coal);
+  }
+
+  .installation_cta .container {
+    padding-block: clamp(2.5rem, 6vw, 3.5rem);
+    text-align: center;
+    background: var(--ink);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .installation_cta .container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+
+  .installation_cta h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .installation_cta p {
+    margin: 0 auto 2rem;
+    max-width: 36rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  /* ==========================================================================
+     LEGAL PAGE
+     ========================================================================== */
+  .legal_document .container {
+    width: 100%;
+    max-width: 42rem;
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .legal_document {
+    padding-block: clamp(3.5rem, 8vw, 5rem);
+    background: var(--ink);
+  }
+
+  .legal_document + .legal_document {
+    border-top: 1px solid var(--slate);
+  }
+
+  .legal_document h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2rem, 4.5vw, 2.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .legal_document .legal_updated {
+    margin: 0 0 2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+
+  .legal_document h2 {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--white);
+  }
+
+  .legal_document p {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--stone);
+  }
+
+  .legal_document ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+    color: var(--stone);
+  }
+
+  .legal_document li {
+    margin-bottom: 0.65rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .legal_document li strong {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  /* ==========================================================================
+     REPAIRS PAGE
+     ========================================================================== */
+  .repairs_hero .container,
+  .repairs_services .container,
+  .repairs_emergency .container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .repairs_hero {
+    position: relative;
+    background-color: var(--ink);
+    padding-block: clamp(4rem, 10vw, 7rem);
+    border-bottom: 1px solid var(--slate);
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .repairs_hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .repairs_hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 44rem;
+  }
+
+  .repairs_hero .service-tag {
+    margin-bottom: 1rem;
+  }
+
+  .repairs_hero h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 14px rgba(8, 9, 10, 0.9);
+  }
+
+  .repairs_hero p {
+    margin: 0 0 2rem;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--stone);
+    text-shadow: 0 2px 6px rgba(8, 9, 10, 0.9);
+  }
+
+  .repairs_services {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--coal);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .repairs_services h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .repairs_services .services_grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 48rem) {
+    .repairs_services .services_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .repairs_services .service_item {
+    padding: 2rem;
+    background: var(--ink);
+    border: 1px solid var(--slate);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .repairs_services .service_item h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  .repairs_services .service_item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  .repairs_emergency {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .repairs_emergency .emergency_box {
+    padding: clamp(2.5rem, 6vw, 3.5rem);
+    text-align: center;
+    background: var(--coal);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .repairs_emergency .emergency_box::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+
+  .repairs_emergency .emergency_box h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .repairs_emergency .emergency_box p {
+    margin: 0 auto 2rem;
+    max-width: 40rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  /* ==========================================================================
+     SERVICES PAGE
+     ========================================================================== */
+  .services_hero .container,
+  .services_overview .container,
+  .services_cta .container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .services_hero {
+    position: relative;
+    background-color: var(--ink);
+    padding-block: clamp(4rem, 10vw, 7rem);
+    border-bottom: 1px solid var(--slate);
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .services_hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .services_hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 44rem;
+  }
+
+  .services_hero h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 14px rgba(8, 9, 10, 0.9);
+  }
+
+  .services_hero p {
+    margin: 0 0 2rem;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--stone);
+    text-shadow: 0 2px 6px rgba(8, 9, 10, 0.9);
+  }
+
+  .services_overview {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--coal);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .services_overview h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .services_overview .services_main_grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 48rem) {
+    .services_overview .services_main_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .services_overview .service_card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: var(--ink);
+    border: 1px solid var(--slate);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .services_overview .service_card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+
+  .services_overview .service_card h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  .services_overview .service_card p {
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  .services_overview .service_link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    border-bottom: 1px dashed var(--accent);
+  }
+
+  .services_overview .service_link:hover {
+    color: var(--white);
+    border-bottom-style: solid;
+  }
+
+  .services_cta {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .services_cta .container {
+    padding-block: clamp(2.5rem, 6vw, 3.5rem);
+    text-align: center;
+    background: var(--coal);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .services_cta .container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+
+  .services_cta h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .services_cta p {
+    margin: 0 auto 2rem;
+    max-width: 36rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--stone);
   }
   
   /* ==========================================================================

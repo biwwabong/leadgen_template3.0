@@ -1,0 +1,45 @@
+<section class="contact_form_section">
+  <div class="container">
+    <h2>Request a Call Back</h2>
+    <form class="contact_lead_form" action="#" method="POST">
+
+      <div class="form_group">
+        <label for="service_type">Required Service</label>
+        <select id="service_type" name="service_type" required>
+          <option value="" disabled selected>Select a service...</option>
+          <option value="repair">Emergency Repair / Maintenance</option>
+          <option value="installation">New Garage Door Installation</option>
+          <option value="automation">Electric Conversion / Automation</option>
+          <option value="other">General Enquiry</option>
+        </select>
+      </div>
+
+      <div class="form_group">
+        <label for="customer_name">Full Name</label>
+        <input type="text" id="customer_name" name="customer_name" placeholder="e.g. John Smith" required>
+      </div>
+
+      <div class="form_group">
+        <label for="customer_phone">Phone Number</label>
+        <input type="tel" id="customer_phone" name="customer_phone" placeholder="e.g. 07123 456789" required>
+      </div>
+
+      <div class="form_group">
+        <label for="customer_email">Email Address</label>
+        <input type="email" id="customer_email" name="customer_email" placeholder="e.g. john@example.com" required>
+      </div>
+
+      <div class="form_group">
+        <label for="customer_location">Location / Postcode in <span class="target-area">[Target Area]</span></label>
+        <input type="text" id="customer_location" name="customer_location" placeholder="e.g. Town Centre" required>
+      </div>
+
+      <div class="form_group">
+        <label for="message">Details of your request</label>
+        <textarea id="message" name="message" rows="4" placeholder="Please describe the issue or your requirements..."></textarea>
+      </div>
+
+      <button type="submit" class="btn_primary">Submit Quote Request</button>
+    </form>
+  </div>
+</section>
