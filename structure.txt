@@ -1,0 +1,24 @@
+Folder PATH listing for volume Project Drive1 2TB
+Volume serial number is 00000017 CEEA:9A00
+E:.
+¦   chatgpt instruction file to keep the thick cunt inline.txt
+¦   gemmini, site build prompt.txt
+¦   structure.txt
+¦   
++---assets
++---components
++---content
++---dist
++---pages
+¦   +---main_pages
+¦           automtion.html
+¦           contact.html
+¦           faq.html
+¦           index.html
+¦           installation.html
+¦           legal.html
+¦           repairs.html
+¦           services.html
+¦           
++---scripts
++---styles

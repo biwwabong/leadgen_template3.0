@@ -1,0 +1,102 @@
+Act as an expert Local SEO strategist, senior copywriter, and vanilla web developer. I am building a highly optimized, lightning-fast lead-generation micro-niche website for garage door services in Peterborough, UK. 
+
+The site is built using static files (Vanilla HTML, CSS, and vanilla JS only—no React, no external frameworks) and will be deployed via Cloudflare Pages. 
+
+To help me build this, you must thoroughly understand and strictly adhere to the following architectural blueprint and strategy:
+
+### 1. THE LAUNCH STRATEGY (PHASED APPROACH)
+*   Phase 1 (Day 1 Launch): We are only launching the core site foundation (roughly 4,000 words total across 7 key pages). We will NOT launch neighborhood pages yet.
+*   Phase 2 (Post-Ranking Launch): Only when the core site ranks on pages 1–2 for main Peterborough terms will we begin adding hyper-local neighborhood pages (e.g., Werrington, Gunthorpe, Paston). These will be added in small batches of 3–5 pages at a time.
+
+### 2. THE CORE SITE PAGE LINEUP & WORD COUNTS
+You will help me write and code the templates for these 7 core launch pages:
+1.  Index / Home Page (1,000 – 1,200 words): Optimized for "Garage Door Repair & Installation Peterborough". Must include trust indicators, emergency response mentions, and clear paths to the 3 main services.
+2.  Service Page 1: Garage Door Repairs (600 – 800 words): High-intent page focusing on urgent issues (snapped cables, broken springs, trapped vehicles, lockouts).
+3.  Service Page 2: New Garage Door Installation (600 – 800 words): Focuses on high-ticket sales, mentioning styles (roller, sectional, up-and-over) and premium brands (Hörmann, Garador).
+4.  Service Page 3: Electric & Automated Conversions (600 – 800 words): Upgrading existing doors to automated systems.
+5.  FAQ Page (500 – 600 words): Targeting "People Also Ask" questions with localized pricing estimates (e.g., "How much does a garage door cable repair cost in Peterborough?").
+6.  Contact / Quote Page: Featuring a streamlined, low-friction mobile lead form (4 fields: Name, Phone, Postcode, Service Dropdown).
+7.  Legal Utilities (Terms, Privacy, and Cookie Policy): Must clearly state that we match consumers with vetted local trades professionals to comply with UK lead-gen laws.
+
+### 3. THE HYPER-LOCAL NEIGHBORHOOD MESH ARCHITECTURE
+When we eventually generate the 30+ neighborhood pages, we will use a strict localized internal linking structure to avoid Google's "Doorway Page" or "Mass Page Generation" spam penalties:
+*   NO Boilerplate Text: Every single neighborhood page must feature 100% unique copywriting containing local context (specific roads, estates, local landmarks, schools).
+*   No Sitewide Interlinking: Instead of a massive list of 30 links in the footer, each neighborhood page will only link to its 4 immediate geographic neighbors, building isolated local "silos" or "mesh networks".
+*   Self-Contained Conversions: The lead form will live directly on the neighborhood page template so the user doesn't have to navigate back to the homepage to convert.
+*   Every neighborhood page will feature a self-referencing canonical tag to reinforce its unique localized identity to Googlebot.
+
+### 4. TECHNICAL & SEO REQUIREMENTS
+*   Semantic Diversity: Do not keyword stuff. Weave in natural, related terms. Industry terms: torsion springs, canopy cables, roller shutters, electric operators. Local anchors: Cambridgeshire, A15 corridor, Nene Valley, Fens.
+*   Zero JS-Dependency for Content: All core text elements, phone numbers, and call-to-action hooks must be written in raw semantic HTML so Googlebot can read it effortlessly without executing JavaScript.
+*   Mobile-First Conversion: Phone numbers must be coded as prominent sticky click-to-call links (`href="tel:"`) optimized for users facing home emergencies.
+*   JSON-LD LocalBusiness Schema must be embedded natively within the `<head>` of the index page template.
+
+### 5. MINI-ENGINE & COMPILATION SCRIPT REQUIREMENTS
+I am building a two-stage local generation engine using Node.js:
+* Stage 1: A script compiles my visual raw HTML components (headers, footers, form sidebars) into individual fully fleshed layout files inside the `/pages/` directory for manual code review.
+* Stage 2: A production build script parses those completed pages, applies final minification, and places them all strictly at the top root-level of the `/dist/` folder for flat deployment to Cloudflare Pages.
+
+The compilation script MUST automatically programmatically handle these 3 SEO automation steps during the Stage 2 build process:
+
+1. AUTO-GENERATED SITEMAP.XML: 
+The script must crawl the `/dist/` folder post-build, grab every valid production HTML file name, strip the '.html' extension, and automatically write a clean `sitemap.xml` directly into the `dist/` folder using our production domain string.
+
+2. DYNAMIC CANONICAL TAG INJECTION:
+During compile time, the script must read the final target URL slug of the file it is creating and automatically inject a self-referencing canonical header into the `<head>` of that specific HTML file:
+Ex: If processing 'repairs.html', inject: <link rel="canonical" href="https://yourdomain.com/repairs" />
+
+3. GEOGRAPHIC NEIGHBOR LINK MESH:
+When we unlock Phase 2 (neighborhood pages), the script will read a structured local JSON array containing our 30 Peterborough neighborhoods and their 4 direct geographic neighbors. The script must automatically construct the hyper-local bottom navigation links unique to each neighborhood file during compilation.
+
+### 6. MULTI-DOMAIN ARCHITECTURE & GLOBAL DESIGN POLICY
+* Isolated Local Domains: We are NOT building a national brand website with subfolders. Instead, each city will be its own completely independent website on its own highly localized domain name (e.g., lincolnshiregaragedoors.co.uk, hullgaragedoors.co.uk). 
+* Unified Design Layout: Because these are completely separate domains, we will use the EXACT same component layout, HTML skeletons, styling, colors, and button border-radii across all websites. Google does not penalize separate local domains for sharing design framework code.
+* Strict Text & Data Isolation: While the design remains identical, the mini-engine must guarantee that NO text content or business identifiers are duplicated across different city domains. For each new city deployment, the engine must ingest a completely new, unique localized data source.
+
+The Stage 2 build script must dynamically swap out and unique-ify these 4 specific areas for each independent domain:
+
+1. COMPONENT DATA ISOLATION:
+The engine must read a city-specific data file (e.g., hull.json or lincoln.json) to completely change the text content across the site. This includes local headings, body paragraphs, and explicit local landmarks/geography to ensure 100% unique copywriting per domain.
+
+2. ISOLATED LOCAL BUSINESS SCHEMA:
+The JSON-LD LocalBusiness schema template embedded in the `<head>` of the index page must dynamically generate unique business identifiers for that specific domain. The business name, target website URL, target county area, and critically, the local phone number, must change entirely to match the local area.
+
+3. LOCALIZED SOCIAL PROOF:
+The reviews component must load unique text-based reviews specific to the local city being compiled (e.g., mentioning specific local roads or suburbs belonging strictly to that city) rather than using a generic global reviews file.
+
+4. IMAGE META TAG AUTOMATION:
+While the image placement blocks are structurally identical in the layout, the script must dynamically inject localized image filenames and unique, descriptive local text into the HTML `alt=""` attributes based on the current city domain target.
+
+### 7. INDEX PAGE COMPONENT ORDER & CONTENT STRUCTURING
+When generating the layout architecture for the Index/Home page, the components must be compiled in this exact vertical order to maximize SEO indexing density and mobile conversions:
+
+1. COMPONENT: Sticky Header (Slim view, branding, local area confirmation, prominent tap-to-call anchor text link).
+2. COMPONENT: Primary Hero (Split layout: <h1> semantic intent matching headline, trust bullet points, and an un-styled 4-field static lead capture form).
+3. COMPONENT: Trust Anchor Strip (Graphic trust indicators, ratings notice, and service guarantees).
+4. COMPONENT: Core Service Block - Repairs (Focusing heavily on emergency vocabulary, long-tail problem components, and contextual text links).
+5. COMPONENT: Core Service Block - Installations (Focusing on brand names, materials, styling types, and property upgrades).
+6. COMPONENT: Localized Proof (Targeted text reviews injecting micro-geographic neighborhoods or landmarks relative to the target city domain).
+7. COMPONENT: FAQ Schema Grid (Semantic FAQ formatting structured to rank for localized long-tail question strings).
+8. COMPONENT: Footer Hub (Legal lead-matching disclosures, links to policy pages, and the initial local micro-area linking matrix).
+
+### 8. SUPPLEMENTARY PAGES ORDER & TEMPLATE BLUEPRINTS
+When generating templates for the auxiliary pages, compile components in these exact vertical paths:
+
+1. TEMPLATE: repairs.html -> Sticky Header -> Emergency Hero (with Left-Aligned Form) -> Trust Anchor Strip -> Common Faults Grid -> Brands We Service -> Localized Proof (Speed Reviews) -> Footer Hub.
+2. TEMPLATE: installation.html -> Sticky Header -> Installation Hero (with Quote Form) -> Trust Anchor Strip -> Style Showcase Section -> 3-Step Installation Process -> Localized Proof (Quality Reviews) -> Footer Hub.
+3. TEMPLATE: automation.html -> Sticky Header -> Automation Hero -> Trust Anchor Strip -> Core Automation Benefits -> Motor Compatibility Check -> Localized Proof -> Footer Hub.
+4. TEMPLATE: faq.html -> Sticky Header -> FAQ Hero -> Master Accordion Grid (Semantic FAQ) -> Trust Anchor Strip -> Full Width Lead Capture Banner -> Footer Hub.
+5. TEMPLATE: contact.html -> Sticky Header -> Clean Contact Hub (Split layout: Local Phone & Hours | Large 4-field Form) -> Trust Anchor Strip -> Local Coverage Notice -> Footer Hub.
+
+
+### 9. STRICT ARCHITECTURAL RESTRAINT: THE ZERO-FRAMEWORK MANDATE
+* Development Environment Stack: Node.js (ES Modules) is authorized ONLY for filesystem manipulation, local data ingestion, string parsing, page stitching, and automated build processes on the local machine.
+* Production Deployment Stack: Every file outputted into the final `/dist/` folder for Cloudflare deployment must be strictly native, standard vanilla web files:
+    - Pure Semantic HTML5
+    - Raw, Standard CSS3 (Modularized or bundled, no preprocessing required unless managed natively by our node scripts)
+    - Lightweight, Native Vanilla JavaScript (Zero external runtime frameworks, zero npm clientside tracking libraries, zero heavy dependencies).
+* Performance Benchmark Goal: The output files must require absolute minimum execution overhead, ensuring maximum mobile page speed rankings across UK local search queries.
+
+---
+
+Acknowledge that you completely understand this blueprint, the technical stack (Vanilla HTML/CSS/JS + Cloudflare Pages), the local UK market, and the phased launch strategy. Do not generate code or pages yet—simply summarize back the core approach and tell me you are ready for step-by-step instructions.
