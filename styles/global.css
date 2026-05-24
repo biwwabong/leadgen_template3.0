@@ -1,0 +1,709 @@
+/* ==========================================================================
+   MODERN HIGH-CONVERSION DESIGN SYSTEM
+   ========================================================================== */
+   :root {
+    --ink: #08090a;
+    --coal: #121417;
+    --slate: #1e2229;
+    --border-glow: #2a313d;
+    --stone: #94a3b8;
+    --paper: #f8fafc;
+    --white: #ffffff;
+    
+    /* Conversion Accent Array */
+    --accent: #ff5a00;
+    --accent-hover: #ff7733;
+    --trust-green: #00e676;
+    
+    /* Layout Matrix */
+    --max: 76rem;
+    --pad: clamp(1.5rem, 5vw, 3rem);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--paper);
+    background: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Global Content Constraints */
+  .header-container,
+  .hero-container,
+  .strip-container,
+  .service-container,
+  .proof-container,
+  .faq-container,
+  .footer-container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  /* [Target Area] placeholders — brand orange everywhere */
+  .target-area {
+    color: var(--accent);
+  }
+  
+  /* ==========================================================================
+     COMPONENT 1: STICKY HEADER
+     ========================================================================== */
+  .sticky-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: rgba(8, 9, 10, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--slate);
+    z-index: 1000;
+    padding: 1.15rem 0;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  
+  .brand-logo {
+    font-weight: 900;
+    font-size: 1.25rem;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  
+  .local-confirmation {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--stone);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .phone-actions .phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent) 0%, #e04f00 100%);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 14px rgba(255, 90, 0, 0.3);
+    border-radius: 2px;
+  }
+  
+  .phone-actions .phone-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 90, 0, 0.45);
+  }
+  
+  /* ==========================================================================
+     COMPONENT 2: PRIMARY HERO (FULL WIDTH BACKGROUND IMAGE AT 50% OPACITY)
+     ========================================================================== */
+  .hero-section {
+    position: relative;
+    background-color: var(--ink);
+    padding-block: clamp(4rem, 10vw, 7rem);
+    border-bottom: 1px solid var(--slate);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Background image path is relative to this CSS file — works on every page */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .hero-container {
+    display: grid;
+    gap: 3.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Content sits cleanly over the background layer image */
+  }
+  
+  @media (min-width: 58rem) {
+    .hero-container {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+    }
+  }
+  
+  .hero-content h1 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.5rem, 6.5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 14px rgba(8, 9, 10, 0.9); /* Heavy drop shadow keeps text ultra-sharp over the full image */
+  }
+  
+  .hero-content h1 .target-area {
+    display: block;
+    margin-top: 0.25rem;
+  }
+  
+  .trust-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 2rem;
+  }
+  
+  .trust-bullets li {
+    font-size: 1.05rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(8, 9, 10, 0.9);
+  }
+  
+  .check-icon {
+    color: var(--trust-green);
+    font-weight: 900;
+    margin-right: 0.75rem;
+    font-size: 1.15rem;
+  }
+  
+  /* Modern Lead Capture Form Wrapper */
+  .hero-form-wrapper {
+    width: 100%;
+    padding: 2.5rem;
+    background: var(--ink);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    position: relative;
+  }
+  
+  .hero-form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  }
+  
+  .lead-form h3 {
+    margin: 0 0 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1.15rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 90, 0, 0.2);
+    margin-top: 0.5rem;
+  }
+  
+  .submit-btn:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 6px 18px rgba(255, 90, 0, 0.35);
+  }
+  
+  /* ==========================================================================
+     COMPONENT 3: TRUST ANCHOR STRIP
+     ========================================================================== */
+  .trust-strip {
+    padding-block: 2.25rem;
+    background: var(--ink);
+    border-bottom: 1px solid var(--slate);
+  }
+  
+  .strip-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  @media (min-width: 48rem) {
+    .strip-container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+  
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--stone);
+  }
+  
+  .strip-item strong {
+    color: var(--white);
+  }
+  
+  .stars {
+    color: var(--accent);
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+  }
+  
+  /* ==========================================================================
+     COMPONENTS 4 & 5: PREMIUM SERVICE BLOCKS
+     ========================================================================== */
+  .service-block {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--coal);
+  }
+  
+  .service-block:nth-of-type(even) {
+    background: var(--ink);
+  }
+  
+  .service-container {
+    display: grid;
+    gap: 3.5rem;
+  }
+  
+  @media (min-width: 58rem) {
+    .service-container {
+      grid-template-columns: 1.3fr 1fr;
+      align-items: center;
+      gap: 5rem;
+    }
+  }
+  
+  .service-tag {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  
+  .service-content h2 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  
+  .service-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--stone);
+    margin-bottom: 2rem;
+  }
+  
+  .keyword-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+  }
+  
+  .keyword-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid var(--slate);
+  }
+  
+  .contextual-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--stone);
+  }
+  
+  .contextual-link {
+    color: var(--accent);
+    font-weight: 700;
+    border-bottom: 1px dashed var(--accent);
+  }
+  
+  .contextual-link:hover {
+    color: var(--white);
+    border-bottom-style: solid;
+  }
+  
+  .service-image-placeholder {
+    border: 1px solid var(--border-glow);
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
+    min-height: 320px;
+    overflow: hidden;
+  }
+
+  .service-image-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  @media (min-width: 58rem) {
+    .layout-reversed {
+      grid-template-columns: 1fr 1.3fr;
+    }
+    .layout-reversed .service-image-placeholder {
+      grid-column: 1;
+    }
+    .layout-reversed .service-content {
+      grid-column: 2;
+    }
+  }
+  
+  /* ==========================================================================
+     COMPONENT 6: LOCAL REVIEWS
+     ========================================================================== */
+  .proof-section {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--ink);
+    border-top: 1px solid var(--slate);
+  }
+  
+  .proof-header {
+    margin-bottom: 3.5rem;
+  }
+  
+  .proof-header h2 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: -0.04em;
+  }
+  
+  .proof-sub {
+    font-size: 1.1rem;
+    color: var(--stone);
+  }
+  
+  .reviews-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 46rem) {
+    .reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .review-card {
+    padding: 2.5rem;
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  
+  .review-stars {
+    margin: 0 0 1.25rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  
+  .review-body {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--paper);
+    font-style: italic;
+  }
+  
+  .review-author {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--stone);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  
+  /* ==========================================================================
+     COMPONENT 7: FAQ SCHEMA ACCORDION
+     ========================================================================== */
+  .faq-section {
+    padding-block: clamp(4.5rem, 12vw, 8rem);
+    background: var(--coal);
+    border-block: 1px solid var(--slate);
+  }
+  
+  .faq-header {
+    margin-bottom: 3.5rem;
+  }
+  
+  .faq-header h2 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: -0.04em;
+  }
+  
+  .faq-sub {
+    font-size: 1.1rem;
+    color: var(--stone);
+  }
+  
+  .faq-grid-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .faq-item {
+    border: 1px solid var(--slate);
+    background: var(--ink);
+  }
+  
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    cursor: pointer;
+    list-style: none;
+  }
+  
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+  
+  .faq-question::after {
+    content: "+";
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--stone);
+    transition: transform 0.2s ease;
+  }
+  
+  .faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+    color: var(--accent);
+  }
+  
+  .faq-answer {
+    padding: 0 2rem 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--stone);
+  }
+  
+  /* ==========================================================================
+     COMPONENT 8: FOOTER HUB & AREA MATRIX
+     ========================================================================== */
+  .footer-hub {
+    padding-block: 5rem 3rem;
+    background: var(--ink);
+  }
+  
+  .footer-disclosure p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--stone);
+  }
+  
+  .footer-divider {
+    margin: 3rem 0;
+    border: none;
+    border-top: 1px solid var(--slate);
+  }
+  
+  .footer-matrix h4 {
+    margin: 0 0 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  
+  .matrix-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+  
+  .matrix-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--stone);
+  }
+  
+  .matrix-item:hover {
+    color: var(--accent);
+  }
+  
+  .footer-bottom {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--slate);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--stone);
+  }
+  
+  .copyright-text {
+    letter-spacing: 0.02em;
+  }
+  
+  .legal-links {
+    display: flex;
+    gap: 1.75rem;
+  }
+  
+  .legal-link:hover {
+    color: var(--white);
+  }
+  
+  /* ==========================================================================
+     CLEAN RESPONSIVE COMPACT LAYOUT BREAKPOINTS
+     ========================================================================== */
+  @media (max-width: 58rem) {
+    .hero-container,
+    .service-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .layout-reversed {
+      grid-template-columns: 1fr;
+    }
+    
+    .service-image-placeholder {
+      order: -1;
+    }
+  }
+  
+  @media (max-width: 48rem) {
+    .header-container {
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: center;
+    }
+  
+    .phone-actions, .phone-actions .phone-link {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .keyword-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+  }
