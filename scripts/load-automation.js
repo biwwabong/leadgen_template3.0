@@ -10,8 +10,12 @@
     '../../components/global/header.html',
     '../../components/automation/automations_hero.html',
     '../../components/automation/automations_social_proof.html',
+    '../../components/automation/automations_problem_solution.html',
     '../../components/automation/automations_features.html',
+    '../../components/automation/automations_comparison.html',
+    '../../components/automation/automations_pricing.html',
     '../../components/automation/automations_how_it_works.html',
+    '../../components/automation/automations_faq.html',
     '../../components/automation/automations_cta.html',
     '../../components/global/footer.html'
   ];

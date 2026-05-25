@@ -9,7 +9,10 @@
   var components = [
     '../../components/global/header.html',
     '../../components/repairs/repairs_hero.html',
+    '../../components/repairs/repairs_problem_solution.html',
     '../../components/repairs/repairs_services.html',
+    '../../components/repairs/repairs_pricing.html',
+    '../../components/repairs/repairs_faq.html',
     '../../components/repairs/repairs_emergency.html',
     '../../components/global/footer.html'
   ];

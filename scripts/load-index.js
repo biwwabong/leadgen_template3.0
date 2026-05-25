@@ -10,10 +10,14 @@
     '../../components/global/header.html',
     '../../components/index/hero.html',
     '../../components/index/trust_strip.html',
+    '../../components/index/homw-problem-solution.html',
     '../../components/index/service_repairs.html',
     '../../components/index/service_installations.html',
+    '../../components/index/home-gallery.html',
+    '../../components/index/home-process.html',
     '../../components/index/localised_proof.html',
     '../../components/index/faq.html',
+    '../../components/index/home-cta.html',
     '../../components/global/footer.html'
   ];
 

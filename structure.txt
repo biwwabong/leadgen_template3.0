@@ -1,38 +1,99 @@
-leadgen_template3.0/
-  assets/
-    images/
-      hero/
-      service_repairs/
-      service_installations/
-  components/
-    global/          — shared on every page
-      header.html
-      footer.html
-    index/           — home page sections (compile order)
-      hero.html
-      trust_strip.html
-      service_repairs.html
-      service_installations.html
-      localised_proof.html
-      faq.html
-    automation/
-      automations_hero.html
-      automations_social_proof.html
-      automations_features.html
-      automations_how_it_works.html
-      automations_cta.html
-    contact/
-    faq/
-    installation/
-    legal/
-    repairs/
-    services/
-  content/
-  dist/
-  pages/
-    main_pages/
-      index.html     — shell; components loaded by scripts/load-index.js
-  scripts/
-    load-index.js
-  styles/
-    global.css
+Folder PATH listing for volume Project Drive1 2TB
+Volume serial number is 000000EC CEEA:9A00
+E:.
+¦   .gitignore
+¦   chatgpt instruction file to keep the thick cunt inline.txt
+¦   gemmini, site build prompt.txt
+¦   README.md
+¦   structure.txt
+¦   
++---assets
+¦   +---images
+¦       +---hero
+¦       ¦       hero-bg.webp
+¦       ¦       
+¦       +---service_installations
+¦       ¦       garage_door_installaton.webp
+¦       ¦       
+¦       +---service_repairs
+¦               garage-door-repair-spring.webp
+¦               
++---components
+¦   +---automation
+¦   ¦       automations_cta.html
+¦   ¦       automations_features.html
+¦   ¦       automations_hero.html
+¦   ¦       automations_how_it_works.html
+¦   ¦       automations_social_proof.html
+¦   ¦       
+¦   +---contact
+¦   ¦       contact_form.html
+¦   ¦       contact_hero.html
+¦   ¦       contact_trust.html
+¦   ¦       
+¦   +---faq
+¦   ¦       faq_accordion.html
+¦   ¦       faq_cta.html
+¦   ¦       faq_hero.html
+¦   ¦       
+¦   +---global
+¦   ¦       footer.html
+¦   ¦       header.html
+¦   ¦       
+¦   +---index
+¦   ¦       faq.html
+¦   ¦       hero.html
+¦   ¦       localised_proof.html
+¦   ¦       service_installations.html
+¦   ¦       service_repairs.html
+¦   ¦       trust_strip.html
+¦   ¦       
+¦   +---installation
+¦   ¦       installation_cta.html
+¦   ¦       installation_features.html
+¦   ¦       installation_hero.html
+¦   ¦       installation_options.html
+¦   ¦       
+¦   +---legal
+¦   ¦       cookie_policy.html
+¦   ¦       privacy_policy.html
+¦   ¦       terms_of_service.html
+¦   ¦       
+¦   +---repairs
+¦   ¦       repairs_emergency.html
+¦   ¦       repairs_hero.html
+¦   ¦       repairs_services.html
+¦   ¦       
+¦   +---services
+¦           services_cta.html
+¦           services_hero.html
+¦           services_overview.html
+¦           
++---content
+¦       config.json
+¦       
++---dist
++---pages
+¦   +---main_pages
+¦           automation.html
+¦           contact.html
+¦           faq.html
+¦           index.html
+¦           installation.html
+¦           legal.html
+¦           repairs.html
+¦           services.html
+¦           
++---scripts
+¦       load-automation.js
+¦       load-contact.js
+¦       load-faq.js
+¦       load-index.js
+¦       load-installation.js
+¦       load-legal.js
+¦       load-repairs.js
+¦       load-services.js
+¦       
++---styles
+        global.css
+        

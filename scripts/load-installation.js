@@ -9,8 +9,12 @@
   var components = [
     '../../components/global/header.html',
     '../../components/installation/installation_hero.html',
+    '../../components/installation/installation_problem_solution.html',
     '../../components/installation/installation_options.html',
+    '../../components/installation/installation_comparison.html',
     '../../components/installation/installation_features.html',
+    '../../components/installation/installation_pricing.html',
+    '../../components/installation/installation_faq.html',
     '../../components/installation/installation_cta.html',
     '../../components/global/footer.html'
   ];

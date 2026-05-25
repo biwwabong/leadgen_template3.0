@@ -10,6 +10,8 @@
     '../../components/global/header.html',
     '../../components/services/services_hero.html',
     '../../components/services/services_overview.html',
+    '../../components/services/services_comparison.html',
+    '../../components/services/services_faq.html',
     '../../components/services/services_cta.html',
     '../../components/global/footer.html'
   ];
