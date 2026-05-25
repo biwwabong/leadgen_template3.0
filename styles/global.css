@@ -771,6 +771,62 @@
     color: var(--accent-hover);
   }
 
+  .home_area_directory_section {
+    padding-block: clamp(4rem, 10vw, 6rem);
+    background: var(--coal);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .home_area_directory_section .block-head {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .home_area_directory_section .block-head p {
+    margin: 0.75rem auto 0;
+    max-width: 42rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--stone);
+  }
+
+  .area_directory_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .area_directory_group h3 {
+    margin: 0 0 1.25rem;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .area_directory_grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  }
+
+  .area_directory_grid a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--ink);
+    border: 1px solid var(--slate);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .area_directory_grid a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   /* ==========================================================================
      COMPONENT 6: LOCAL REVIEWS
      ========================================================================== */
@@ -926,19 +982,37 @@
     background: var(--ink);
   }
   
+  .footer-disclosure {
+    margin-bottom: 3rem;
+  }
+
   .footer-disclosure p {
+    margin: 0;
     font-size: 0.85rem;
     line-height: 1.7;
     color: var(--stone);
   }
-  
-  .footer-divider {
-    margin: 3rem 0;
-    border: none;
+
+  .footer-columns {
+    display: grid;
+    gap: 2.5rem 3rem;
+    padding-top: 3rem;
     border-top: 1px solid var(--slate);
   }
-  
-  .footer-matrix h4 {
+
+  @media (min-width: 40rem) {
+    .footer-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .footer-columns {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .footer-column h4 {
     margin: 0 0 1.25rem;
     font-size: 0.75rem;
     font-weight: 800;
@@ -946,48 +1020,94 @@
     text-transform: uppercase;
     color: var(--white);
   }
-  
-  .matrix-links {
+
+  .footer-column__links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
   }
-  
-  .matrix-item {
+
+  .footer-column__link,
+  .footer-column__item {
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--stone);
   }
-  
-  .matrix-item:hover {
+
+  .footer-column__link {
+    transition: color 0.2s ease;
+  }
+
+  .footer-column__link:hover {
     color: var(--accent);
   }
-  
+
+  .footer-column__link:hover .phone-number {
+    color: var(--accent-hover);
+  }
+
+  .footer-contact__phone,
+  .footer-contact__email {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .footer-contact__label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .footer-contact__phone .phone-number {
+    color: var(--accent);
+    transition: color 0.2s ease;
+  }
+
+  .footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .footer-social__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--stone);
+    background: var(--coal);
+    border: 1px solid var(--slate);
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .footer-social__link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--ink);
+  }
+
+  .footer-social__icon {
+    display: block;
+  }
+
   .footer-bottom {
-    margin-top: 4rem;
+    margin-top: 3rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--slate);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--stone);
   }
-  
+
   .copyright-text {
+    margin: 0;
     letter-spacing: 0.02em;
-  }
-  
-  .legal-links {
-    display: flex;
-    gap: 1.75rem;
-  }
-  
-  .legal-link:hover {
-    color: var(--white);
   }
 
   /* ==========================================================================
@@ -3982,9 +4102,4 @@
       gap: 0.75rem;
     }
   
-    .footer-bottom {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
   }

@@ -18,6 +18,7 @@
     '../../components/index/localised_proof.html',
     '../../components/index/faq.html',
     '../../components/index/home-cta.html',
+    '../../components/index/home_area_directory.html',
     '../../components/global/footer.html'
   ];
 
