@@ -10,7 +10,7 @@
     '../../components/global/header.html',
     '../../components/index/hero.html',
     '../../components/index/trust_strip.html',
-    '../../components/index/homw-problem-solution.html',
+    '../../components/index/home-problem-solution.html',
     '../../components/index/service_repairs.html',
     '../../components/index/service_installations.html',
     '../../components/index/home-gallery.html',

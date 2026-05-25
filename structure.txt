@@ -1,5 +1,5 @@
 Folder PATH listing for volume Project Drive1 2TB
-Volume serial number is 000000EC CEEA:9A00
+Volume serial number is 00000061 CEEA:9A00
 E:.
 ¦   .gitignore
 ¦   chatgpt instruction file to keep the thick cunt inline.txt
@@ -19,11 +19,27 @@ E:.
 ¦               garage-door-repair-spring.webp
 ¦               
 +---components
+¦   +---area
+¦   ¦       area_cta_strip.html
+¦   ¦       area_faq_accordion.html
+¦   ¦       area_footer.html
+¦   ¦       area_header.html
+¦   ¦       area_hero.html
+¦   ¦       area_local_insights.html
+¦   ¦       area_nearby_routing.html
+¦   ¦       area_reviews.html
+¦   ¦       area_service_grid.html
+¦   ¦       area_trust_strip.html
+¦   ¦       
 ¦   +---automation
+¦   ¦       automations_comparison.html
 ¦   ¦       automations_cta.html
+¦   ¦       automations_faq.html
 ¦   ¦       automations_features.html
 ¦   ¦       automations_hero.html
 ¦   ¦       automations_how_it_works.html
+¦   ¦       automations_pricing.html
+¦   ¦       automations_problem_solution.html
 ¦   ¦       automations_social_proof.html
 ¦   ¦       
 ¦   +---contact
@@ -43,16 +59,25 @@ E:.
 ¦   +---index
 ¦   ¦       faq.html
 ¦   ¦       hero.html
+¦   ¦       home-cta.html
+¦   ¦       home-gallery.html
+¦   ¦       home-process.html
+¦   ¦       home_area_directory.html
+¦   ¦       home-problem-solution.html
 ¦   ¦       localised_proof.html
 ¦   ¦       service_installations.html
 ¦   ¦       service_repairs.html
 ¦   ¦       trust_strip.html
 ¦   ¦       
 ¦   +---installation
+¦   ¦       installation_comparison.html
 ¦   ¦       installation_cta.html
+¦   ¦       installation_faq.html
 ¦   ¦       installation_features.html
 ¦   ¦       installation_hero.html
 ¦   ¦       installation_options.html
+¦   ¦       installation_pricing.html
+¦   ¦       installation_problem_solution.html
 ¦   ¦       
 ¦   +---legal
 ¦   ¦       cookie_policy.html
@@ -61,11 +86,16 @@ E:.
 ¦   ¦       
 ¦   +---repairs
 ¦   ¦       repairs_emergency.html
+¦   ¦       repairs_faq.html
 ¦   ¦       repairs_hero.html
+¦   ¦       repairs_pricing.html
+¦   ¦       repairs_problem_solution.html
 ¦   ¦       repairs_services.html
 ¦   ¦       
 ¦   +---services
+¦           services_comparison.html
 ¦           services_cta.html
+¦           services_faq.html
 ¦           services_hero.html
 ¦           services_overview.html
 ¦           
@@ -74,6 +104,9 @@ E:.
 ¦       
 +---dist
 +---pages
+¦   +---areas
+¦   ¦       area.html
+¦   ¦       
 ¦   +---main_pages
 ¦           automation.html
 ¦           contact.html
@@ -85,6 +118,7 @@ E:.
 ¦           services.html
 ¦           
 +---scripts
+¦       load-area.js
 ¦       load-automation.js
 ¦       load-contact.js
 ¦       load-faq.js
