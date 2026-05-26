@@ -3367,32 +3367,41 @@
   /* ==========================================================================
      LEGAL PAGE
      ========================================================================== */
-  .legal_document .container {
+  .legal-section .container {
     width: 100%;
     max-width: 42rem;
     margin-inline: auto;
     padding-inline: var(--pad);
   }
 
-  .legal_document {
+  .legal-section {
     padding-block: clamp(3.5rem, 8vw, 5rem);
+    border-bottom: 1px solid var(--slate);
+  }
+
+  .legal-section.privacy-policy {
     background: var(--ink);
   }
 
-  .legal_document + .legal_document {
-    border-top: 1px solid var(--slate);
+  .legal-section.terms-of-service {
+    background: var(--coal);
   }
 
-  .legal_document h1 {
+  .legal-section.cookie-policy {
+    background: var(--ink);
+  }
+
+  .legal-section h1 {
     margin: 0 0 0.5rem;
     font-size: clamp(2rem, 4.5vw, 2.75rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.04em;
     color: var(--white);
+    line-height: 1.1;
   }
 
-  .legal_document .legal_updated {
+  .legal-section .legal-updated {
     margin: 0 0 2rem;
     font-size: 0.8rem;
     font-weight: 700;
@@ -3401,37 +3410,59 @@
     color: var(--accent);
   }
 
-  .legal_document h2 {
+  .legal-section h2 {
     margin: 2rem 0 0.75rem;
-    font-size: 1.1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+    font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
     color: var(--white);
+    line-height: 1.35;
   }
 
-  .legal_document p {
+  .legal-section p {
     margin: 0 0 1rem;
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--stone);
   }
 
-  .legal_document ul {
-    margin: 0 0 1rem;
-    padding-left: 1.25rem;
+  .legal-section p strong {
+    color: var(--paper);
+    font-weight: 700;
+  }
+
+  .legal-section ul {
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .legal-section li {
+    padding-left: 1rem;
+    border-left: 2px solid var(--slate);
+    font-size: 0.95rem;
+    line-height: 1.65;
     color: var(--stone);
   }
 
-  .legal_document li {
-    margin-bottom: 0.65rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .legal_document li strong {
+  .legal-section li strong {
     color: var(--white);
     font-weight: 700;
+  }
+
+  .legal-section li > strong:first-child {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   /* ==========================================================================
