@@ -1,29 +1,29 @@
-<section class="hero" aria-labelledby="hero-heading">
-    <div class="wrap hero__inner">
-      <div>
-        <p class="hero__eyebrow">Local garage door engineers in Werrington, Peterborough</p>
-        <h1 id="hero-heading" class="hero__title">
-          Garage Door Repairs & Installations in <span class="area-name">Werrington</span>
-        </h1>
-        <p class="hero__lead">
-          Local engineers providing fast, fixed-price garage door repairs and new installations across Werrington and the surrounding estates.
-        </p>
-        <p class="hero__trust">Same‑day PE4 callouts · Local engineers · Fixed‑price quotes</p>
-      </div>
-  
-      <div class="hero__form-panel">
-        <form class="hero__form" action="#" method="get">
-          <input
-            class="hero__form-input"
-            type="text"
-            id="postcode"
-            name="postcode"
-            placeholder="Enter your postcode in or near Werrington"
-            autocomplete="postal-code"
-            required
-          >
-          <button class="hero__form-submit btn btn--primary" type="submit">Check availability</button>
-        </form>
-      </div>
+<section class="area-hero" aria-label="Garage door services in {{AREA_NAME}}">
+
+  <div class="container">
+
+    <h1 class="hero-title">
+      Garage Door Repairs &amp; Installations in {{AREA_NAME}}
+    </h1>
+
+    <p class="hero-lead">
+      Local independent engineers providing fast, fixed‑price garage door repairs, new installations 
+      and emergency call‑outs across {{AREA_NAME}}, {{CITY}} and nearby estates.
+    </p>
+
+    <ul class="hero-benefits">
+      <li><span class="check">✓</span> Same‑day availability where possible</li>
+      <li><span class="check">✓</span> Manual, electric, roller &amp; sectional doors</li>
+      <li><span class="check">✓</span> No call‑out fees &amp; fixed local pricing</li>
+    </ul>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book Local Service</a>
+      <a href="tel:{{PHONE_NUMBER}}" class="hero-phone">
+        Or call <span class="phone-number">{{PHONE_DISPLAY}}</span>
+      </a>
     </div>
-  </section>
+
+  </div>
+
+</section>
