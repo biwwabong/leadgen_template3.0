@@ -1,42 +1,90 @@
-<section class="hero-section" id="main" aria-label="Garage door repairs and installations in Peterborough">
+<section class="hero hero--home" id="main" aria-label="Garage door repairs and installations in {{CITY}}">
 
-  <div class="hero-container">
-    
-    <div class="hero-content">
-      <h1>
-        Garage Door Repairs &amp; Installations In <span class="target-area">Peterborough</span>
-      </h1>
-      <p class="service-lead">
-        Stuck, damaged or worn garage door? We arrange fast, reliable help from trusted local garage door engineers across Peterborough and nearby areas.
-      </p>
-      <ul class="trust-bullets">
-        <li><span class="check-icon">✓</span> Same‑Day &amp; Next‑Day Callouts Arranged</li>
-        <li><span class="check-icon">✓</span> Clear Pricing Confirmed Before Any Work</li>
-        <li><span class="check-icon">✓</span> Local, Vetted Garage Door Specialists</li>
-      </ul>
+  <div class="hero-inner">
+
+    <div class="hero-top">
+
+      <div class="hero-main">
+        <header class="hero-header">
+          <h1 class="hero-title">
+            Fast, Fixed‑Price Garage Door Repairs &amp; New Installations in <span class="target-area">{{CITY}}</span>
+          </h1>
+
+          <p class="hero-lead">
+            Broken spring, snapped cable, jammed door or full replacement needed? Get a vetted, local garage door engineer to your door in {{CITY}} as soon as today.
+          </p>
+
+          <p class="hero-areas">
+            Serving {{CITY}}, {{AREA_1}}, {{AREA_2}}, {{AREA_3}} and surrounding areas.
+          </p>
+        </header>
+
+        <div class="hero-proof">
+          <p class="hero-rating">
+            <span class="hero-rating__stars" aria-hidden="true">★★★★★</span>
+            <strong>4.9/5</strong> from homeowners across {{CITY}}
+            <span class="rating-count">(based on {{REVIEW_COUNT}}+ verified reviews)</span>
+          </p>
+
+          <ul class="hero-trust">
+            <li><span class="check" aria-hidden="true">✓</span> Same‑Day &amp; Next‑Day Availability</li>
+            <li><span class="check" aria-hidden="true">✓</span> Fixed Prices Confirmed Before Any Work</li>
+            <li><span class="check" aria-hidden="true">✓</span> Local, Vetted &amp; Fully Insured Engineers</li>
+            <li><span class="check" aria-hidden="true">✓</span> 90% of Repairs Completed on First Visit</li>
+            <li><span class="check" aria-hidden="true">✓</span> All Door Types: Roller, Sectional, Up‑and‑Over, Side‑Hinged</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <div class="hero-form-wrapper">
+          <form class="hero-form" action="#" method="get" aria-label="Check availability and get a fixed-price quote">
+            <fieldset class="hero-form__fieldset">
+              <legend class="hero-form__legend">Check Local Availability</legend>
+
+              <div class="form-field">
+                <label for="postcode">Your Postcode</label>
+                <input id="postcode" name="postcode" type="text" placeholder="e.g. PE4" required autocomplete="postal-code">
+              </div>
+
+              <div class="form-field">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="repair">Emergency Repair</option>
+                  <option value="installation">New Garage Door</option>
+                  <option value="automation">Automation / Motor Issues</option>
+                  <option value="servicing">Servicing &amp; Maintenance</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary">Get Free Quote</button>
+
+              <p class="form-note">
+                No call‑out fees. No obligation. We match your job with a trusted local specialist.
+              </p>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="hero-phone">
+          <p class="phone-label">Prefer to speak to someone?</p>
+          <a href="tel:{{PHONE_NUMBER}}" class="hero-phone__link">Call <span class="phone-number">{{PHONE_DISPLAY}}</span></a>
+          <p class="phone-hours">Lines open {{HOURS_DESCRIPTION}}.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="hero-form-wrapper">
-      <div class="lead-form">
-        <h3>Check Local Availability</h3>
-        <form action="#" method="get">
-          <div class="form-group">
-            <label for="postcode">Your Postcode</label>
-            <input type="text" id="postcode" placeholder="e.g. PE4" required>
-          </div>
-          <div class="form-group">
-            <label for="service-type">Service Required</label>
-            <select id="service-type" required>
-              <option value="" disabled selected>Select a service...</option>
-              <option value="repair">Emergency Repair</option>
-              <option value="installation">New Garage Door</option>
-              <option value="servicing">Servicing / Maintenance</option>
-            </select>
-          </div>
-          <button type="submit" class="submit-btn">Get Free Quote</button>
-        </form>
-      </div>
+    <div class="hero-process">
+      <h2 class="hero-process__title">How It Works</h2>
+      <ol class="hero-process__list">
+        <li><strong>Tell us your postcode &amp; issue</strong> — broken spring, stuck door, new install, etc.</li>
+        <li><strong>We confirm availability &amp; fixed pricing</strong> from a vetted local engineer.</li>
+        <li><strong>Your engineer arrives</strong> — most repairs completed on the first visit.</li>
+      </ol>
     </div>
 
   </div>
+
 </section>
