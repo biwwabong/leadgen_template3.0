@@ -1,0 +1,28 @@
+{
+  "company": {
+    "name": "Garage Doors"
+  },
+  "location": {
+    "city": "Peterborough",
+    "coverageSuffix": "& Surrounding Areas"
+  },
+  "contact": {
+    "phoneNumber": "01733 123456",
+    "phoneDisplay": "01733 123456",
+    "email": "info@garagedoors.com"
+  },
+  
+  "seo": {
+    "defaultTitle": "Garage Door Repairs & Installations in {{CITY}}",
+    "defaultDescription": "Connect with vetted independent garage door specialists in {{CITY}} for repairs, installations and emergency call-outs."
+  },
+  "header": {
+    "coveragePrefix": "Serving",
+    "phoneCtaPrefix": "Call"
+  },
+  "footer": {
+    "copyrightPrefix": "©",
+    "legalLabel": "Legal",
+    "privacyLabel": "Privacy Policy"
+  }
+}

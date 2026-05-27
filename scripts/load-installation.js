@@ -36,9 +36,15 @@
     });
 
     return chain.then(function () {
-      mount.removeAttribute('aria-busy');
-      var loading = mount.querySelector('.page-loading');
-      if (loading) loading.remove();
+      var applyConfig = window.SiteConfigLoader && window.SiteConfigLoader.apply
+        ? window.SiteConfigLoader.apply(mount)
+        : Promise.resolve();
+
+      return applyConfig.then(function () {
+        mount.removeAttribute('aria-busy');
+        var loading = mount.querySelector('.page-loading');
+        if (loading) loading.remove();
+      });
     });
   }
 
